@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+  <title>Test CleanNumber</title>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script rel='preload' src='cleanNumber.js'></script>
+</head>
+<body>
+  <h1>Test cleanNumber function</h1>
+  <p>Takes a number or string, and returns a number from the values within it ready to be used for future calculations.</p>
+  <div id='results'></div>
+
+  <script type="text/javascript">
+    var testNumbers = [423.234, 23, -238.43, "-23,237.94", "something-34really0dd.3443text", "£84pounds.60pence", "200%"];
+    $(document).ready(function(){ 
+      $.map(testNumbers, function( val, i) {
+        $('#results').append('<p><b>From: ' + val + "</b><br>To: " + cleanNumber(val) + '</p>');
+      });
+    });
+  </script>
+
+</body>
+</html>
